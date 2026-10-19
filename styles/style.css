@@ -75,9 +75,11 @@ body {
 }
 
 .moon:hover img {
-  filter: drop-shadow(0 0 16px rgb(123 179 255 / 80%))
+  filter:
+    drop-shadow(0 0 16px rgb(123 179 255 / 80%))
     drop-shadow(0 0 42px rgb(82 139 255 / 58%))
-    drop-shadow(0 0 88px rgb(90 125 255 / 34%)) brightness(1.12);
+    drop-shadow(0 0 88px rgb(90 125 255 / 34%))
+    brightness(1.12);
   transform: scale(1.025);
 }
 
@@ -112,6 +114,8 @@ body {
   top: 73%;
   left: 45.5%;
   width: clamp(66px, 9.5vw, 190px);
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .hadassah {
@@ -119,6 +123,13 @@ body {
   top: 66%;
   left: 36%;
   width: clamp(100px, 13.5vw, 260px);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.courage:hover img,
+.hadassah:hover img {
+  animation: character-shake 450ms ease-in-out infinite;
 }
 
 .my-fig {
@@ -126,6 +137,24 @@ body {
   top: 60%;
   left: 23.5%;
   width: clamp(86px, 12.5vw, 210px);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.my-fig img {
+  filter: drop-shadow(0 0 0 rgb(255 0 0 / 0%));
+  transform: scale(1);
+  transform-origin: center bottom;
+  transition:
+    filter 700ms ease,
+    transform 2s ease-out;
+}
+
+.my-fig:hover img {
+  filter:
+    drop-shadow(0 0 12px rgb(255 0 0 / 85%))
+    drop-shadow(0 0 30px rgb(255 0 0 / 55%));
+  transform: scale(1.2);
 }
 
 .ground {
@@ -138,6 +167,21 @@ body {
 @keyframes fan-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes character-shake {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+
+  25% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+
+  75% {
+    transform: translateX(3px) rotate(2deg);
   }
 }
 
@@ -193,5 +237,14 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .parallax {
     will-change: auto;
+  }
+
+  .courage:hover img,
+  .hadassah:hover img {
+    animation: none;
+  }
+
+  .my-fig img {
+    transition: none;
   }
 }
