@@ -1,0 +1,13 @@
+{
+  "AppVersion": "2.0.7.4",
+  "Title": "Moonlit Homestead",
+  "Thumbnail": "thumbnail.png",
+  "Preview": "preview.gif",
+  "Desc": "A layered moonlit homestead beneath the Milky Way, with interactive parallax, a glowing moon, and a spinning windmill.",
+  "Author": "CatWater",
+  "License": "MIT",
+  "Contact": "https://github.com/CatWaterCodes/LivelyWallpaperParallaxTemplate",
+  "Type": 1,
+  "Arguments": "--audio --pause-event true",
+  "FileName": "index.html"
+}
